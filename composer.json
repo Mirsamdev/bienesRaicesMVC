@@ -10,11 +10,13 @@
     "require": {
         "intervention/image": "2.7"
     },
-    "autoload": {
+  
+    "autoload":{
         "psr-4": {
-            "Model\\" : "./models",
-            "MVC\\" : "./",
-            "Controllers\\": "./controllers"
+            "Model\\" :"/models",
+            "MVC\\" :"/",
+            "Controlers\\" :"/controllers"
+ 
         }
     }
 }

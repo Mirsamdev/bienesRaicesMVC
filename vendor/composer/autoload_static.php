@@ -30,7 +30,7 @@ class ComposerStaticInit5c3685a6f5c10e03153ddf511f32dd1f
         ),
         'C' => 
         array (
-            'Controllers\\' => 12,
+            'Controlers\\' => 11,
         ),
     );
 
@@ -42,11 +42,11 @@ class ComposerStaticInit5c3685a6f5c10e03153ddf511f32dd1f
         ),
         'Model\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/models',
+            0 => '/models',
         ),
         'MVC\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/',
+            0 => '/',
         ),
         'Intervention\\Image\\' => 
         array (
@@ -56,9 +56,9 @@ class ComposerStaticInit5c3685a6f5c10e03153ddf511f32dd1f
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
         ),
-        'Controllers\\' => 
+        'Controlers\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/controllers',
+            0 => '/controllers',
         ),
     );
 
