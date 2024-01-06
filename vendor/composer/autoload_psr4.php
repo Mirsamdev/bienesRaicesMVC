@@ -11,5 +11,5 @@ return array(
     'MVC\\' => array($baseDir . '/'),
     'Intervention\\Image\\' => array($vendorDir . '/intervention/image/src/Intervention/Image'),
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
-    'Controlers\\' => array($baseDir . '/controllers'),
+    'Controllers\\' => array($baseDir . '/controllers'),
 );
