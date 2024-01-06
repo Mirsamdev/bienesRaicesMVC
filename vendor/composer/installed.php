@@ -3,7 +3,7 @@
         'name' => 'mery/bienesraices_inicio',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '917896fe79b535aeba45fe17369a674cf0c98805',
+        'reference' => 'c451988c44af04045b11e548eb4900a86d1a50cd',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -31,7 +31,7 @@
         'mery/bienesraices_inicio' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '917896fe79b535aeba45fe17369a674cf0c98805',
+            'reference' => 'c451988c44af04045b11e548eb4900a86d1a50cd',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

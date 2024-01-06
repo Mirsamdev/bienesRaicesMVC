@@ -42,11 +42,11 @@ class ComposerStaticInit5c3685a6f5c10e03153ddf511f32dd1f
         ),
         'Model\\' => 
         array (
-            0 => '/models',
+            0 => __DIR__ . '/../..' . '/models',
         ),
         'MVC\\' => 
         array (
-            0 => '/',
+            0 => __DIR__ . '/../..' . '/',
         ),
         'Intervention\\Image\\' => 
         array (
@@ -58,7 +58,7 @@ class ComposerStaticInit5c3685a6f5c10e03153ddf511f32dd1f
         ),
         'Controlers\\' => 
         array (
-            0 => '/controllers',
+            0 => __DIR__ . '/../..' . '/controllers',
         ),
     );
 
