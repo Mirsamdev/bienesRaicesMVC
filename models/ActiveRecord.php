@@ -36,7 +36,7 @@ class ActiveRecord
     public function guardar()
     {
         $resultado = '';
-        if (!is_null($this->id)) {
+        if(!is_null($this->id)) {
             // actualizar
             $resultado = $this->actualizar();
         } else {
@@ -121,7 +121,7 @@ class ActiveRecord
         $query = "DELETE FROM "  . static::$tabla . " WHERE id = " . self::$db->escape_string($this->id) . " LIMIT 1";
         $resultado = self::$db->query($query);
 
-        if ($resultado) {
+        if($resultado) {
             $this->borrarImagen();
         }
 
@@ -151,7 +151,7 @@ class ActiveRecord
         $objeto = new static;
 
         foreach ($registro as $key => $value) {
-            if (property_exists($objeto, $key)) {
+            if(property_exists($objeto, $key)) {
                 $objeto->$key = $value;
             }
         }
@@ -166,7 +166,7 @@ class ActiveRecord
     {
         $atributos = [];
         foreach (static::$columnasDB as $columna) {
-            if ($columna === 'id') continue;
+            if($columna === 'id') continue;
             $atributos[$columna] = $this->$columna;
         }
         return $atributos;
@@ -185,7 +185,7 @@ class ActiveRecord
     public function sincronizar($args = [])
     {
         foreach ($args as $key => $value) {
-            if (property_exists($this, $key) && !is_null($value)) {
+            if(property_exists($this, $key) && !is_null($value)) {
                 $this->$key = $value;
             }
         }
@@ -195,21 +195,25 @@ class ActiveRecord
     public function setImagen($imagen)
     {
         // Elimina la imagen previa
-        if (!is_null($this->id)) {
+        if(!is_null($this->id)) {
             $this->borrarImagen();
         }
         // Asignar al atributo de imagen el nombre de la imagen
-        if ($imagen) {
+        if($imagen) {
             $this->imagen = $imagen;
         }
     }
 
     // Elimina el archivo
-    public function borrarImagen() {
-        // Comprobar si existe el archivo
-        $existeArchivo = file_exists(CARPETA_IMAGENES . $this->imagen);
-        if ($existeArchivo) {
-            unlink(CARPETA_IMAGENES . $this->imagen);
+    public function borrarImagen()
+    {
+        // Comprobar si $this->imagen contiene la ruta de un archivo
+        if (!empty($this->imagen)) {
+            // Comprobar si el archivo realmente existe en la ruta especificada
+            if (file_exists(CARPETA_IMAGENES . $this->imagen)) {
+                // Eliminar el archivo
+                unlink(CARPETA_IMAGENES . $this->imagen);
+            }
         }
     }
 }

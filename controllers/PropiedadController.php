@@ -7,13 +7,15 @@ use Model\Propiedad;
 use Model\Vendedor;
 use Intervention\Image\ImageManagerStatic as Image;
 
-class PropiedadController
-{
+class PropiedadController {
+
   public static function index(Router $router)
   {
 
     $propiedades = Propiedad::all();
-    $resultado = null;
+
+    // Muestra mensaje condicional
+    $resultado $_GET['resultado'] ?? null;
 
     $router->render('propiedades/admin', [
       'propiedades' => $propiedades,
