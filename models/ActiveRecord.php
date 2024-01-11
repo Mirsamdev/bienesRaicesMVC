@@ -32,19 +32,20 @@ class ActiveRecord
         return static::$errores;
     }
 
-    // Registros - CRUD
-    public function guardar()
-    {
-        $resultado = '';
-        if(!is_null($this->id)) {
-            // actualizar
-            $resultado = $this->actualizar();
-        } else {
-            // Creando un nuevo registro
-            $resultado = $this->crear();
-        }
-        return $resultado;
-    }
+   // Registros - CRUD
+   public function guardar()
+   {
+       $resultado = '';
+       if (!is_null($this->id)) {
+           // actualizar
+           $resultado = $this->actualizar();
+       } else {
+           // Creando un nuevo registro
+           $resultado = $this->crear();
+       }
+       return $resultado;
+   }
+
 
     public static function all()
     {

@@ -3,10 +3,8 @@ define('TEMPLATES_URL', __DIR__ . '/templates');
 define('FUNCIONES_URL', __DIR__ . 'funciones.php');
 define('CARPETA_IMAGENES', $_SERVER['DOCUMENT_ROOT'] . '/imagenes/');
 
-function incluirTemplate(string $nombre, bool $inicio = false)
-{
-  include TEMPLATES_URL . "/{$nombre}.php";
-}
+
+function incluirTemplate(string $nombre, bool $inicio = false) { include TEMPLATES_URL . "/{$nombre}.php"; }
 
 function estaAutenticado()
 {
@@ -47,15 +45,15 @@ function validarTipoContenido($tipo)
 function mostrarNotificacion($codigo)
 {
   $mensaje = '';
-
+ 
   switch ($codigo) {
     case "1":
       $mensaje = 'Creado Correctamente';
       break;
-    case "1":
+    case "2":
       $mensaje = 'Actualizado Correctamente';
       break;
-    case "1":
+    case "3":
       $mensaje = 'Eliminado Correctamente';
       break;
     default:
@@ -63,4 +61,22 @@ function mostrarNotificacion($codigo)
       break;
   }
   return $mensaje;
+}
+
+function validarORedireccionar(string $url) {
+  // Validar la URL por ID valido
+  $id = $_GET['id'];
+  $id = filter_var($id, FILTER_VALIDATE_INT);
+
+  if(!$id) {
+    header("Location: {$url}");
+  }
+
+  return $id;
+}
+
+function verErrores() {
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 }

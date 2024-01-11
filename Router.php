@@ -19,9 +19,11 @@ class Router {
     $metodo = $_SERVER['REQUEST_METHOD'];
 
   if($metodo === 'GET') {
+    $urlActual = explode('?',$urlActual)[0];
     $fn = $this->rutasGET[$urlActual] ?? null;
   } else {
-    $fn = $this->rutasPOST[$urlActual] ?? null;
+    $urlActual = explode('?',$urlActual)[0];
+    $fn = $this->rutasGET[$urlActual] ?? null;
   }
 
 
