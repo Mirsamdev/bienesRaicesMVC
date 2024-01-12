@@ -22,6 +22,5 @@ $router->post('/vendedores/crear', [VendedorController::class, 'crear']);
 $router->get('/vendedores/actualizar', [VendedorController::class, 'actualizar']);
 $router->post('/vendedores/actualizar', [VendedorController::class, 'actualizar']);    
 $router->post('/vendedores/eliminar', [VendedorController::class, 'eliminar']);    
-$router->get('/vendedores/eliminar', [VendedorController::class, 'eliminar']);    
  
 $router->comprobarRutas();
