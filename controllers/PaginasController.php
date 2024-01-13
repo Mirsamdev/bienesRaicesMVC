@@ -22,21 +22,35 @@ class PaginasController {
   }
 
   public static function propiedades( Router $router ) {
+
+    $propiedades = Propiedad::all();
+
     $router->render('paginas/propiedades', [
+      'propiedades' => $propiedades
+    ]);
+  }
+
+  public static function propiedad( Router $router ) {
+
+    $id = validarORedireccionar('/propiedades');
+
+    // buscar la propiedad por su id 
+    $propiedad = Propiedad::find($id);
+
+      $router->render('paginas/propiedad', [ 
+        'propiedad' => $propiedad
+      ]);
+  }
+
+  public static function blog( Router $router ) {
+
+    $router->render('paginas/blog', [
 
     ]);
   }
 
-  public static function propiedad() {
-    echo "desde propiedad";
-  }
-
-  public static function blog() {
-    echo "desde blog";
-  }
-
-  public static function entrada() {
-    echo "desde entrada";
+  public static function entrada( Router $router ) {
+    $router->render('paginas/entrada');
   }
 
   public static function contacto() {
