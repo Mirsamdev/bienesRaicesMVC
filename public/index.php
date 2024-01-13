@@ -6,6 +6,7 @@ use MVC\Router;
 use Controllers\PropiedadController;
 use Controllers\VendedorController;
 use Controllers\PaginasController;
+use Controllers\BlogController;
  
 $router = new Router();
  
@@ -32,5 +33,11 @@ $router->get('/blog', [PaginasController::class, 'blog']);
 $router->get('/entrada', [PaginasController::class, 'entrada']);
 $router->get('/contacto', [PaginasController::class, 'contacto']);
 $router->post('/contacto', [PaginasController::class, 'contacto']);
+
+$router->get('/blogs/crear', [BlogController::class], 'crear' );
+$router->post('/blogs/crear', [BlogController::class], 'crear' );
+$router->get('/blogs/actualizar', [BlogController::class], 'actualizar' );
+$router->post('/blogs/actualizar', [BlogController::class], 'actualizar' );
+$router->post('/blogs/eliminar', [BlogController::class], 'eliminar' );
  
 $router->comprobarRutas();

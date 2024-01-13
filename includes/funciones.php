@@ -34,12 +34,15 @@ function s($html): string
 }
 
 // Validar tipo de contenido
-function validarTipoContenido($tipo)
-{
-  $tipos = ['vendedor', 'propiedad'];
+function validarTipoContenido($tipo){
 
+  $tipos = ['vendedor', 'propiedad' , 'blog'];
+  
   return in_array($tipo, $tipos);
-}
+  
+  // debuguear($tipo, $tipos);
+  
+  }
 
 // Muestra los mensajes
 function mostrarNotificacion($codigo)

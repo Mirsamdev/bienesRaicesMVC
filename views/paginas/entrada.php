@@ -1,19 +1,49 @@
 <main class="contenedor seccion contenido-centrado">
-  <h1>Guia para la decoracion de tu hogar</h1>
+
+<h1>Guía para la decoración de tu hogar</h1>
 
 
 
-  <picture>
-    <source srcset="build/img/destacada2.webp" type="image/webp">
-    <source srcset="build/img/destacada2.jpg" type="image/jpeg">
-    <img src="build/img/destacada2.jpg" alt="imagen de la propiedad">
-  </picture>
+<article class="entrada-blog">
 
-  <p class="informacion-meta">Escrito el: <span>20/10/2021</span> por: <span>Admin</span></p>
+<div class="imagen">
 
-  <div class="resumen-propiedad">
+<picture>
+
+<!-- <source srcset="build/img/blog1.webp" type="image/webp">
+
+<source srcset="build/img/blog1.jpg" type="image/jpeg"> -->
+
+<img loading="lazy" src="/imagenes/<?php echo $blog->imagen; ?>" alt="Texto Entrada Blog">
+
+</picture>
+
+</div>
 
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat atque, rem incidunt recusandae, aspernatur consectetur porro esse distinctio nihil adipisci ex sed autem cupiditate? Quasi qui tenetur nisi ipsum ea. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo porro excepturi tempora adipisci dolor assumenda. Nostrum ea labore, aperiam quia possimus quasi aut, inventore eligendi maiores deleniti, dignissimos officia optio?</p>
-  </div>
+
+<div class="texto-entrada">
+
+<a href="blog?id=<?php echo $blog->id; ?>">
+
+<h4><?php echo $blog->titulo; ?></h4>
+
+<p>Escrito el: <span><?php echo $blog->fecha; ?></span> por: <span><?php echo $blog->autor; ?></span> </p>
+
+
+
+<p>
+
+<p><?php echo $blog->detalles; ?></p>
+
+</p>
+
+</a>
+
+</div>
+
+</article>
+
+
+
 </main>
