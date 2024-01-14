@@ -2,53 +2,9 @@
 
 namespace Controllers;
 
-use Model\Blog;
 use MVC\Router;
 use Model\Propiedad;
-use PHPMailer\PHPMailer\PHPMailer;
 class PaginasController {
-  public static function blog( Router $router ) {
-
-    //$router->render('paginas/blog');
-    
-    $blogs = Blog::all();
-    
-    
-    
-    $router->render('paginas/blog', [
-    
-    'blogs' => $blogs
-    
-    ]);
-    
-    }
-    
-    
-    
-    public static function entrada( Router $router ) {
-    
-    //$router->render('paginas/entrada');
-    
-    $id = validarORedireccionar('/blog');
-    
-    
-    
-    // Obtener los datos de la propiedad
-    
-    $blog = Blog::find($id);
-    
-    
-    
-    $router->render('paginas/entrada', [
-    
-    'blog' => $blog
-    
-    ]);
-    
-    }
-    
-    
-  
   public static function index( Router $router ) {
 
     $propiedades = Propiedad::get(3);
@@ -86,5 +42,19 @@ class PaginasController {
       ]);
   }
 
+  public static function blog( Router $router ) {
+
+    $router->render('paginas/blog', [
+
+    ]);
+  }
+
+  public static function entrada( Router $router ) {
+    $router->render('paginas/entrada');
+  }
+
+  public static function contacto() {
+    echo "desde contacto";
+  }
 
 }
