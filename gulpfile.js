@@ -11,7 +11,7 @@ const imagemin = require('gulp-imagemin'); // Minificar imagenes
 const notify = require('gulp-notify');
 const cache = require('gulp-cache');
 const clean = require('gulp-clean');
-const webp = require('gulp-webp');
+const webp = import('gulp-webp');
 
 const paths = {
     scss: 'src/scss/**/*.scss',
@@ -46,11 +46,16 @@ function imagenes() {
         .pipe(notify({ message: 'Imagen Completada' }));
 }
 
-function versionWebp() {
-    return src(paths.imagenes)
-        .pipe(webp())
-        .pipe(dest('./public/build/js'))
-        .pipe(notify({ message: 'Imagen Completada' }));
+async function versionWebp(done) {
+    const opciones = {
+        quality: 50
+    };
+    //Aquí está la clave para que funcione y evitar los problemas que ya había 
+    const webpModule = await webp;
+    src('src/img/**/*.{png,jpg}')
+        .pipe(webpModule.default(opciones))
+        .pipe(dest('build/img'));
+    done();
 }
 
 

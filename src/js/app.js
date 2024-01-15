@@ -35,10 +35,18 @@ function eventListeners() {
   const mobileMenu = document.querySelector('.mobile-menu');
 
   mobileMenu.addEventListener('click', navegacionResponsive);
+
+  // Muestra campos adicionales
+  const metodoContacto = document.querySelectorAll('input[name="contacto[contacto]"]');
+  metodoContacto.forEach(input => input.addEventListener('click', mostrarMetodosContacto));
 }
 
 function navegacionResponsive() {
   const navegacion = document.querySelector('.navegacion');
 
   navegacion.classList.toggle('mostrar')
+}
+
+function mostrarMetodosContacto() {
+  console.log('seleccionando...');
 }
