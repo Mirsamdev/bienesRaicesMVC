@@ -53,8 +53,9 @@
 
           <label for="cantactar-email">E-mail</label>
           <input  type="radio" value="email" id="contactar-email" name="contacto[contacto]" >
-          
         </div>
+
+        <div id="contacto"></div>
 
         <p>Si eligio telefono, elija la fecha y la hora</p>
 
